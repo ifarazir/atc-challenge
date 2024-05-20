@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Logo from './logo'
+import { RegisterDrawerDialog } from './register-modal'
 
 const navigation = [
     { name: 'Product', href: '#' },
@@ -21,7 +22,6 @@ export default function Hero() {
                 <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                     <div className="flex lg:flex-1">
                         <a href="#" className="-m-1.5 p-1.5 flex items-center">
-                            <span className="sr-only">Your Company</span>
                             <Logo className='h-10 w-auto' />
                             <div className='flex items-start flex-col'>
                                 <p className='text-sm font-bold'>مسابقه الگوریتم تریدینگ</p>
@@ -30,23 +30,25 @@ export default function Hero() {
                         </a>
                     </div>
                     <div className="flex lg:hidden">
-                        <a
-                            href="#"
-                            className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
-                        >
-                            ثبت نام
-                        </a>
+                        <RegisterDrawerDialog>
+                            <button
+                                className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+                            >
+                                ثبت نام
+                            </button>
+                        </RegisterDrawerDialog>
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-5">
-                        <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                        {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
                             ورود <span aria-hidden="true">&larr;</span>
-                        </a>
-                        <a
-                            href="#"
-                            className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
-                        >
-                            ثبت نام
-                        </a>
+                        </a> */}
+                        <RegisterDrawerDialog>
+                            <button
+                                className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+                            >
+                                ثبت نام
+                            </button>
+                        </RegisterDrawerDialog>
                     </div>
                 </nav>
                 <Dialog className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -88,7 +90,7 @@ export default function Hero() {
                                         href="#"
                                         className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     >
-                                        Log in
+                                        ورود
                                     </a>
                                 </div>
                             </div>
@@ -123,15 +125,16 @@ export default function Hero() {
                                 مسابقه الگوریتم تریدینگ امیرکبیر اولین رویداد با موضوع پیش‌بینی بازارهای سرمایه در ایران است. این موضوع یک چالش جدی در حوزه معاملات الگوریتمی است. شرکت‌کنندگان در این مسابقه باید استراتژی‌های معاملاتی خود را پیاده‌سازی و با کمک داده های داده شده به مسابقه بگذارند.
                             </p>
                             <div className="mt-10 flex items-center justify-center gap-x-6">
-                                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                                {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
                                     اطلاعات بیشتر <span aria-hidden="true">←</span>
-                                </a>
-                                <a
-                                    href="#"
-                                    className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
-                                >
-                                    ثبت نام
-                                </a>
+                                </a> */}
+                                <RegisterDrawerDialog>
+                                    <button
+                                        className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+                                    >
+                                        ثبت نام
+                                    </button>
+                                </RegisterDrawerDialog>
                             </div>
                         </div>
                         <div className="mt-16 flow-root sm:mt-24">
