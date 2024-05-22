@@ -5,6 +5,7 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Logo from './logo'
 import { RegisterDrawerDialog } from './register-modal'
+import Link from 'next/link'
 
 const navigation = [
     { name: 'Product', href: '#' },
@@ -21,15 +22,21 @@ export default function Hero() {
             <header className="absolute inset-x-0 top-0 z-50">
                 <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                     <div className="flex lg:flex-1">
-                        <a href="#" className="-m-1.5 p-1.5 flex items-center">
+                        <Link href="/" className="-m-1.5 p-1.5 flex items-center">
                             <Logo className='h-10 w-auto' />
                             <div className='flex items-start flex-col'>
                                 <p className='text-sm font-bold'>مسابقه الگوریتم تریدینگ</p>
                                 <p className='text-xs font-light'>رقابتی برای تسلط بر بازار‌ها</p>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                     <div className="flex lg:hidden">
+                        <Link
+                            href={"/auth/login"}
+                            className="px-5 py-2.5 text-sm font-semibold text-black"
+                        >
+                            ورود
+                        </Link>
                         <RegisterDrawerDialog>
                             <button
                                 className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
@@ -39,9 +46,12 @@ export default function Hero() {
                         </RegisterDrawerDialog>
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-5">
-                        {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                            ورود <span aria-hidden="true">&larr;</span>
-                        </a> */}
+                        <Link
+                            href={"/auth/login"}
+                            className="px-5 py-2.5 text-sm font-semibold text-black"
+                        >
+                            ورود
+                        </Link>
                         <RegisterDrawerDialog>
                             <button
                                 className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
