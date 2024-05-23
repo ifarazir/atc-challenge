@@ -9,7 +9,28 @@ import axios from "axios";
 import { useToast } from '@/components/ui/use-toast';
 import { ArrowLeft, ArrowRight, ChevronLeft, DownloadCloud } from 'lucide-react';
 import Link from 'next/link';
-import { getLeagues } from '../../page';
+
+async function getLeagues(
+    token: string
+) {
+    let config = {
+        method: 'get',
+        maxBodyLength: Infinity,
+        url: 'http://194.5.205.157:8000/api/leagues',
+        headers: {
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + token
+        }
+    };
+
+    return axios(config)
+        .then(response => {
+            return response.data.data.leagues as League[];
+        })
+        .catch(error => {
+            console.error(error);
+        });
+}
 
 export async function getLeagueAnswers(
     token: string,

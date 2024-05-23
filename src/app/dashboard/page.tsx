@@ -10,7 +10,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { ArrowLeft, ArrowRight, ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
 
-export async function getLeagues(
+async function getLeagues(
     token: string
 ) {
     let config = {

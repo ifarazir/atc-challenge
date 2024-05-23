@@ -9,7 +9,7 @@ import axios from "axios";
 import { useToast } from '@/components/ui/use-toast';
 import { getLeagueAnswers } from '../[id]/content';
 
-export async function getLeagues(
+async function getLeagues(
     token: string
 ) {
     let config = {
@@ -31,7 +31,7 @@ export async function getLeagues(
         });
 }
 
-export async function storeLeagueAnswer(
+async function storeLeagueAnswer(
     {
         token,
         league_id,
