@@ -64,15 +64,15 @@ export default function AnswerCard(leagueAnswer: LeagueAnswer) {
         </div>
 
         <div className="w-full grid grid-cols-3 rounded-lg gap-5">
-            <div className='w-full col-span-2 md:col-span-1 flex items-center justify-between bg-gray-100 rounded-lg p-3'>
+            <div className='w-full col-span-3 md:col-span-1 flex items-center justify-between bg-gray-100 rounded-lg p-3'>
                 <p className='font-semibold text-sm'>بازده</p>
                 <p className='font-normal text-sm font-mono' dir='ltr'>{leagueAnswer.return}</p>
             </div>
-            <div className='w-full col-span-2 md:col-span-1 flex items-center justify-between bg-gray-100 rounded-lg p-3'>
+            <div className='w-full col-span-3 md:col-span-1 flex items-center justify-between bg-gray-100 rounded-lg p-3'>
                 <p className='font-semibold text-sm'>نسبت شارپ</p>
                 <p className='font-normal text-sm font-mono' dir='ltr'>{leagueAnswer.sharpe_ratio}</p>
             </div>
-            <div className='w-full col-span-2 md:col-span-1 flex items-center justify-between bg-gray-100 rounded-lg p-3'>
+            <div className='w-full col-span-3 md:col-span-1 flex items-center justify-between bg-gray-100 rounded-lg p-3'>
                 <p className='font-semibold text-sm'>بیشینه کاهش</p>
                 <p className='font-normal text-sm font-mono' dir='ltr'>{leagueAnswer.max_drawdown}</p>
             </div>
