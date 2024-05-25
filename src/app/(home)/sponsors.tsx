@@ -21,6 +21,14 @@ export default function Sponsors() {
                         />
                         <p className="text-xs font-medium">انجمن علمی دانشکده ریاضی و علوم کامپیوتر</p>
                     </a>
+                    <a href="https://mcs.aut.ac.ir/" target="_blank" rel="noreferrer" className="bg-gray-400/5 p-5 sm:p-8 flex flex-col items-center justify-center gap-3">
+                        <img
+                            className="max-h-16 w-full object-contain"
+                            src="/images/sponsors/mcs2.png"
+                            alt="Transistor"
+                        />
+                        <p className="text-xs font-medium">دانشکده ریاضی و علوم کامپیوتر</p>
+                    </a>
                     <a href="http://cg.aut.ac.ir/" target="_blank" rel="noreferrer" className="bg-gray-400/5 p-5 sm:p-8 flex flex-col items-center justify-center gap-3">
                         <img
                             className="max-h-16 w-full object-contain"

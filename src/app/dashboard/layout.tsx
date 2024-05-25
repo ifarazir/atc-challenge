@@ -20,6 +20,7 @@ import SubItem1 from './subLayout';
 
 const navigation = [
     { name: 'داشبورد', href: '/dashboard', current: false },
+    { name: 'ثبت پاسخ', href: '/dashboard/leagues/add', current: false },
 ]
 
 const queryClient = new QueryClient()
@@ -67,14 +68,6 @@ export default function AdminLayout({
                                     <SessionProvider>
                                         <div className="hidden md:block">
                                             <div className="mr-4 flex items-center gap-4 md:mr-6">
-                                                <Link
-                                                    href={'/dashboard/leagues/add'}
-                                                    className="rounded-md bg-teal-600 px-5 py-2.5 text-xs font-semibold text-white hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
-                                                >
-                                                    <Plus className="w-4 h-4 inline-block ml-2" />
-                                                    ثبت پاسخ
-                                                </Link>
-
                                                 {/* Profile dropdown */}
                                                 <Menu as="div" className="relative ml-3">
                                                     <div>

@@ -3,6 +3,7 @@ import Hero from "./hero";
 import Leagues from "./leagues";
 import Sponsors from "./sponsors";
 import Footer from "../footer";
+import FAQ from "./faq";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <Leagues />
       <Sponsors />
+      <FAQ />
       <Footer />
     </main>
   );

@@ -83,7 +83,7 @@ const DashboardPage: React.FC = () => {
                         key={league.id}
                         className="group relative flex items-center space-x-3 rounded-lg border border-gray-200 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2 hover:border-gray-300 transition-all"
                     >
-                        <p className="text-base font-medium text-gray-900">{league.title}</p>
+                        <p className="text-base font-semibold text-gray-900 capitalize">{league.title}</p>
 
                         <ChevronLeft className="absolute top-1/2 left-2 -mt-3 w-6 h-6 text-gray-400 group-hover:text-gray-700 transition-all" />
                     </Link>

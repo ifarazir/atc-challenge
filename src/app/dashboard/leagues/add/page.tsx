@@ -4,10 +4,11 @@ import Loading from '@/components/loading';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from "axios";
 import { useToast } from '@/components/ui/use-toast';
 import { getLeagueAnswers } from '../[id]/content';
+import { Loader } from 'lucide-react';
 
 async function getLeagues(
     token: string
@@ -70,7 +71,8 @@ async function storeLeagueAnswer(
 const DashboardPage: React.FC = () => {
     const { data: session, status } = useSession()
     const router = useRouter();
-    const { toast } = useToast()
+    const { toast } = useToast();
+    const [loading, setLoading] = useState(false);
     
 
     const { status: leaguesStatus, data: leagues, error: leaguesErrors } = useQuery({
@@ -105,6 +107,7 @@ const DashboardPage: React.FC = () => {
 
     const onSubmitAnswer = async (e) => {
         e.preventDefault();
+        setLoading(true);
         try {
             const leagueAnswer = await storeLeagueAnswer(
                 {
@@ -119,10 +122,18 @@ const DashboardPage: React.FC = () => {
             //     queryFn: async () => await getLeagueAnswers(session.token, e.target.league_id.value) as LeagueAnswer[],
             // });
 
+            setLoading(false);
+            
             // redirect to league page
             router.push('/dashboard/leagues/' + e.target.league_id.value);
         } catch (error) {
             console.error(error);
+            toast({
+                description: "Error submitting answer",
+                variant: "destructive"
+            });
+            
+            setLoading(false);
         }
 
     };
@@ -171,9 +182,18 @@ const DashboardPage: React.FC = () => {
                                 </div>
                             </div>
                             <div className='mr-auto'>
-                                <button type='submit' className='px-10 py-1.5 rounded-md bg-teal-600 hover:bg-teal-700 transition-all text-white font-medium'>
-                                    ثبت
+                                <button
+                                    type="submit"
+                                    className="flex w-full justify-center rounded-md bg-teal-600 px-20 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+                                    disabled={loading}
+                                >
+                                    {
+                                        loading ? (
+                                            <Loader className='w-5 h-5 my-1 animate-spin text-white' />
+                                        ) : "ثبت"
+                                    }
                                 </button>
+                        
                             </div>
                         </form>
                     </div>

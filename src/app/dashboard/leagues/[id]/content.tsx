@@ -7,8 +7,10 @@ import { useParams, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import axios from "axios";
 import { useToast } from '@/components/ui/use-toast';
-import { ArrowLeft, ArrowRight, ChevronLeft, DownloadCloud } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ChevronLeft, DownloadCloud, Plus } from 'lucide-react';
 import Link from 'next/link';
+import { cttd, persianDateFormatOptions } from '@/lib/utils';
+import AnswerCard from './card';
 
 async function getLeagues(
     token: string
@@ -87,24 +89,28 @@ export default function Content() {
 
     return (
         <div className="container mx-auto py-3">
-            <h1 className='text-2xl font-bold mb-3 capitalize'>لیگ‌ {leagues?.filter(league => league.id == params.id)[0]?.title}</h1>
+            <h1 className='text-2xl font-bold mb-3 capitalize'>{leagues?.filter(league => league.id == params.id)[0]?.title}</h1>
 
             {
                 leaguesStatus == 'pending' && <Loading />
             }
 
             <div className="grid grid-cols-1 gap-4">
-                {leagueStatus == 'success' && leagueAnswers?.length > 0 && leagueAnswers.map((leagueAnswer) => (
-                    <div
-                        key={leagueAnswer.id}
-                        className="group relative flex items-center space-x-3 rounded-lg border border-gray-200 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-teal-500 focus-within:ring-offset-2 hover:border-gray-300 transition-all"
-                    >
-                        <p className="text-base font-medium text-gray-900 uppercase font-mono">{leagueAnswer.code.name}</p>
-
-                        <Link href={leagueAnswer.code.original_url} download target='_blank' className='absolute top-1/2 left-2 -mt-3'>
-                            <DownloadCloud className="w-6 h-6 text-gray-400 group-hover:text-blue-600 transition-all cursor-pointer" />
+                {leagueStatus == 'success' && leagueAnswers?.length ==0 && (
+                    <div className="flex items-center justify-center py-10 bg-white shadow flex-col gap-5">
+                        <p className="text-lg text-gray-700 font-normal">هنوز هیچ پاسخی برای این لیگ ثبت نشده است.</p>
+                        <Link
+                            href={'/dashboard/leagues/add'}
+                            className="rounded-md bg-teal-600 px-5 py-2.5 text-xs font-semibold text-white hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+                        >
+                            <Plus className="w-4 h-4 inline-block ml-2" />
+                            ثبت پاسخ
                         </Link>
+
                     </div>
+                )}
+                {leagueStatus == 'success' && leagueAnswers?.length > 0 && leagueAnswers.slice(0).reverse().map((leagueAnswer) => (
+                    <AnswerCard key={leagueAnswer.id} {...leagueAnswer} />
                 ))}
             </div>
         </div>

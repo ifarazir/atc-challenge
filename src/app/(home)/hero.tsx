@@ -18,8 +18,20 @@ export default function Hero() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <div className="bg-white">
+        <div className="bg-white flex flex-col">
+
             <header className="absolute inset-x-0 top-0 z-50">
+                <div className="w-full flex items-center justify-between gap-x-6 bg-red-800 px-6 py-2.5 sm:pr-3.5 lg:pl-8">
+                    <p className="text-sm leading-6 text-white">
+                        <a href="#">
+                            <strong className="font-semibold">اطلاعیه</strong>
+                            <svg viewBox="0 0 2 2" className="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
+                                <circle cx={1} cy={1} r={1} />
+                            </svg>
+                            ضمن پوزش به دلیل اختلال در سرور و اینترنت دانشگاه، سیستم آپلود و تست کد ها با تاخیر از هم‌اکنون در دسترس قرار گرفت.
+                        </a>
+                    </p>
+                </div>
                 <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                     <div className="flex lg:flex-1">
                         <Link href="/" className="-m-1.5 p-1.5 flex items-center">

@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { signIn, useSession } from "next-auth/react";
 import { useToast } from "@/components/ui/use-toast";
+import { Loader } from "lucide-react";
 
 export default function Login() {
     const [loading, setLoading] = useState(false);
@@ -87,6 +88,7 @@ export default function Login() {
                                                 autoComplete="phone"
                                                 required
                                                 className="block w-full rounded-md border-0 py-1.5 px-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
+                                                disabled={loading}
                                             />
                                         </div>
                                     </div>
@@ -103,6 +105,7 @@ export default function Login() {
                                                 autoComplete="current-password"
                                                 required
                                                 className="block w-full rounded-md border-0 py-1.5 px-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
+                                                disabled={loading}
                                             />
                                         </div>
                                     </div>
@@ -111,8 +114,13 @@ export default function Login() {
                                         <button
                                             type="submit"
                                             className="flex w-full justify-center rounded-md bg-teal-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+                                            disabled={loading}
                                         >
-                                            ورود
+                                            {
+                                                loading ? (
+                                                    <Loader className='w-5 h-5 my-1 animate-spin text-white' />
+                                                ) : "ورود"
+                                            }
                                         </button>
                                     </div>
                                 </form>
