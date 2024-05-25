@@ -16,7 +16,7 @@ async function getLeagues(
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: 'http://194.5.205.157:8000/api/leagues',
+        url: 'https://atc.irotagh.com/api/leagues',
         headers: {
             'Accept': 'application/json',
             'Authorization': 'Bearer ' + token
