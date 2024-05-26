@@ -44,33 +44,31 @@ export default function Hero() {
                     </div>
                     <div className="flex lg:hidden">
                         <Link
-                            href={"/auth/login"}
+                            href={"/#faq"}
                             className="px-5 py-2.5 text-sm font-semibold text-black"
+                        >
+                            سوالات متداول
+                        </Link>
+                        <Link
+                            href={'/auth/login'}
+                            className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
                         >
                             ورود
                         </Link>
-                        <RegisterDrawerDialog>
-                            <button
-                                className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
-                            >
-                                ثبت نام
-                            </button>
-                        </RegisterDrawerDialog>
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-5">
                         <Link
-                            href={"/auth/login"}
+                            href={"/#faq"}
                             className="px-5 py-2.5 text-sm font-semibold text-black"
+                        >
+                            سوالات متداول
+                        </Link>
+                        <Link
+                            href={'/auth/login'}
+                            className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
                         >
                             ورود
                         </Link>
-                        <RegisterDrawerDialog>
-                            <button
-                                className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
-                            >
-                                ثبت نام
-                            </button>
-                        </RegisterDrawerDialog>
                     </div>
                 </nav>
                 <Dialog className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>

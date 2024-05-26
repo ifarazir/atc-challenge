@@ -71,6 +71,9 @@ export default function Login() {
                             <h2 className="mt-8 text-2xl font-bold leading-9 text-gray-900">
                                 ورود به داشبورد مسابقه
                             </h2>
+                            <p className="mt-3 text-base text-gray-900">
+                                نام کاربری و رمز عبور هر دو شماره تماس می‌باشد.
+                            </p>
                         </div>
 
                         <div className="mt-10">
@@ -78,7 +81,7 @@ export default function Login() {
                                 <form onSubmit={handleSubmit} method="POST" className="space-y-6">
                                     <div>
                                         <label htmlFor="phone" className="block text-sm font-medium leading-6 text-gray-900">
-                                            شماره موبایل
+                                            نام کاربری
                                         </label>
                                         <div className="mt-2">
                                             <input

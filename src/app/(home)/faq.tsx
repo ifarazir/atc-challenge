@@ -105,7 +105,7 @@ const faqs = [
 
 export default function FAQ() {
     return (
-        <div className="w-full bg-white py-12 sm:py-24">
+        <div className="w-full bg-white py-12 sm:py-24" id="faq">
             <div className="w-full mx-auto max-w-7xl px-6 lg:px-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-5">سوالات متداول</h2>
                 <dl className="mt-10">

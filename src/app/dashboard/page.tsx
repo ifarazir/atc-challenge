@@ -72,6 +72,14 @@ const DashboardPage: React.FC = () => {
         <div className="container mx-auto py-3">
             <h1 className='text-2xl font-bold mb-3'>لیگ‌ها</h1>
 
+            <div className='shadow p-3 border flex flex-col gap-y-3 md:flex-row items-start md:items-center justify-between bg-white mb-10 rounded-lg'>
+                <p>نمونه کد پایتون جهت استفاده شرکت کنندگان، آماده دانلود می‌باشد.</p>
+
+                <Link href={'/sample2.py'} download target="_blank" className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600">
+                    دانلود نمونه کد
+                </Link>
+            </div>
+
             {
                 leaguesStatus == 'pending' && <Loading />
             }
