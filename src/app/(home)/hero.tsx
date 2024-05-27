@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="bg-white flex flex-col">
 
             <header className="absolute inset-x-0 top-0 z-50">
-                <div className="w-full flex items-center justify-between gap-x-6 bg-red-800 px-6 py-2.5 sm:pr-3.5 lg:pl-8">
+                {/* <div className="w-full flex items-center justify-between gap-x-6 bg-red-800 px-6 py-2.5 sm:pr-3.5 lg:pl-8">
                     <p className="text-sm leading-6 text-white">
                         <a href="#">
                             <strong className="font-semibold">اطلاعیه</strong>
@@ -31,7 +31,7 @@ export default function Hero() {
                             ضمن پوزش به دلیل اختلال در سرور و اینترنت دانشگاه، سیستم آپلود و تست کد ها با تاخیر از هم‌اکنون در دسترس قرار گرفت.
                         </a>
                     </p>
-                </div>
+                </div> */}
                 <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                     <div className="flex lg:flex-1">
                         <Link href="/" className="-m-1.5 p-1.5 flex items-center">

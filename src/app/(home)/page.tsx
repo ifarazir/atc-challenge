@@ -4,6 +4,7 @@ import Leagues from "./leagues";
 import Sponsors from "./sponsors";
 import Footer from "../footer";
 import FAQ from "./faq";
+import Alert from "./alert";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Sponsors />
       <FAQ />
       <Footer />
+      <Alert />
     </main>
   );
 }
