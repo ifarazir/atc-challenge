@@ -11,7 +11,7 @@ export default function AnswerCard(leagueAnswer: LeagueAnswer) {
     //     setLoading(true)
     //     try {
             
-    //         const res = await fetch(`https://atc.irotagh.com/api/auth/login`, {
+    //         const res = await fetch(`https://api.atchallenge.ir/api/auth/login`, {
     //             method: 'POST',
     //             headers: {
     //                 'Content-Type': 'application/json'

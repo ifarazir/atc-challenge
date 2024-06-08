@@ -16,7 +16,7 @@ async function getLeagues(
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: 'https://atc.irotagh.com/api/leagues',
+        url: 'https://api.atchallenge.ir/api/leagues',
         headers: {
             'Accept': 'application/json',
             'Authorization': 'Bearer ' + token
@@ -48,7 +48,7 @@ async function storeLeagueAnswer(
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'https://atc.irotagh.com/api/leagues/' + league_id + '/answers',
+        url: 'https://api.atchallenge.ir/api/leagues/' + league_id + '/answers',
         headers: {
             'Accept': 'application/json',
             'content-type': 'multipart/form-data',

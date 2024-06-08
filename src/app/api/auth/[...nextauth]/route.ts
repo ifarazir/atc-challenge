@@ -19,7 +19,7 @@ const handler = NextAuth({
                         "password": credentials.password
                     });
 
-                    const response = await fetch('https://atc.irotagh.com/api/auth/login', {
+                    const response = await fetch('https://api.atchallenge.ir/api/auth/login', {
                         method: 'POST',
                         headers: {
                             'Accept': 'application/json',

@@ -25,7 +25,7 @@ async function StoreNewPassword(
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'https://atc.irotagh.com/api/auth/change-password',
+        url: 'https://api.atchallenge.ir/api/auth/change-password',
         headers: {
             'Accept': 'application/json',
             'content-type': 'multipart/form-data',
